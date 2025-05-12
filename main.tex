@@ -90,7 +90,7 @@
 
   \subsection*{Primer Avance}
   \paragraph{}
-  Durante el primer avance definimos parámetros como la dimensión de la malla que modela el sistema, el step $h$ y posteriormente definimos las ecuaciones y condiciones de frontera de la malla.
+  Durante el primer avance se tuvo como objetivvo definir parámetros como la dimensión, el step $h$, las ecuaciones y condiciones de frontera de la malla.
 
   \paragraph{}
   Para los parámetros iniciales decidimos que usariamos los siguientes valores:
@@ -169,7 +169,7 @@
 
   \subsection*{Segundo Avance}
   \paragraph{}
-  Para el segundo avance, nuestro objetivo fue aplicar el método de \textbf{Newton-Raphson} para solucionar el sistema de ecuaciones asociado al problema. Dicho sistema está conformado por ecuaciones de la forma:
+  Para el segundo avance, el objetivo fue aplicar el método de \textbf{Newton-Raphson} para solucionar el sistema de ecuaciones asociado al problema. Dicho sistema está conformado por ecuaciones de la forma:
 
   \[
   F_{i,j} = v_{(i,j)}^x - \frac{1}{4} \left[v_{(i+1,j)}^x + v_{(i-1,j)}^x + v_{(i,j+1)}^x + v_{(i,j-1)}^x \right] - N
@@ -247,7 +247,7 @@
   \end{figure}
 
   \paragraph{}
-  Una vez definido el Jacobiano y su estructura, el siguiente paso es implementar el método de Newton-Raphson para resolver el sistema de ecuaciones no lineales. Para ello, utilizaremos Python y la función \textbf{dgesv} de la librería \textbf{scipy}, la cual emplea factorización LU optimizada mediante LAPACK para resolver sistemas lineales.
+  Una vez definido el Jacobiano y su estructura, el siguiente paso es implementar el método de Newton-Raphson para resolver el sistema de ecuaciones no lineales. Para ello, utilizaremos Python y la función \textbf{dgesv} de la librería \textbf{scipy}, la cual emplea factorización LU para resolver el sistema.
 
   \paragraph{}
   Es importante mencionar que el valor inicial seleccionado para el paso de malla, $h=1$, en el primer avance, fue modificado a $h=0.001$. Este cambio se realizó tras observar que las simulaciones con el valor anterior no arrojaban resultados consistentes con el comportamiento esperado. Además, el nuevo valor permite una convergencia más rápida del sistema. Teniendo en cuenta lo anterior, esta fue la solución obtenida:
@@ -260,7 +260,7 @@
 
   \subsection*{Tercer Avance}
   \paragraph{}
-  En el tercer avance tenemos como objetivo la implementación de los métodos iterativos \textbf{Richardson}, \textbf{Jacobi} y \textbf{Gauss-Seidel}, y los métodos de Krylov \textbf{Grad. Descendiente} y \textbf{Grad. Conjugado}.
+  En el tercer avance se tiene como objetivo la implementación de los métodos iterativos \textbf{Richardson}, \textbf{Jacobi} y \textbf{Gauss-Seidel}, y los métodos de Krylov \textbf{Grad. Descendiente} y \textbf{Grad. Conjugado}, para el cálculo del vector de correción $H$.
 
   \paragraph{}
   Para los métodos iterativos mencionados, la ecuación de iteración es:
@@ -282,8 +282,8 @@
 
   estos métodos convergen bajo los siguientes supuestos:
   \begin{itemize}
-      \item Según \cite{kincaid}, para los métodos de Gauss-Seidel y Jacobi, basta con que la matriz $A$ sea diagonal dominante.
-      \item Según \cite{kincaid}, para el método de Richardson, es necesario comprobar que $\|I-Q^{-1}A\| \leq 1$ para alguna norma dada.
+    \item Según \cite{kincaid}, para los métodos de Gauss-Seidel y Jacobi, basta con que la matriz $A$ sea diagonal dominante.
+    \item Según \cite{kincaid}, para el método de Richardson, es necesario comprobar que $\|I-Q^{-1}A\| \leq 1$ para alguna norma dada.
   \end{itemize}
 
   recordemos que una matriz es diagonal dominante si:

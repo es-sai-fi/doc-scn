@@ -163,10 +163,11 @@ OUTPUT c:\Users\hp\Desktop\universidad\Doc Taller 1 SCN\build\main.pdf
 INPUT C:\Users\hp\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\hp\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\hp\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
-INPUT C:\Users\hp\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\hp\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
 INPUT C:\Users\hp\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\hp\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
 INPUT C:\Users\hp\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+INPUT C:\Users\hp\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT .\PrimerMalla.png
 INPUT .\PrimerMalla.png
 INPUT .\PrimerMalla.png
@@ -174,7 +175,6 @@ INPUT .\PrimerMalla.png
 INPUT .\PrimerMalla.png
 INPUT .\PrimerMalla.png
 INPUT .\PrimerMalla.png
-INPUT C:\Users\hp\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
 INPUT .\Jacobiano.png
 INPUT .\Jacobiano.png
 INPUT .\Jacobiano.png

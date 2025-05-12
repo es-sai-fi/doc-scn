@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.23)  12 MAY 2025 00:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.23)  12 MAY 2025 15:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -368,98 +368,95 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/hp/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [1]
+Overfull \hbox (6.10474pt too wide) in paragraph at lines 104--106
+[]\OT1/cmr/bx/n/10 Implementaci^^Son de Newton-Raphson: \OT1/cmr/m/n/10 Con el m^^Setodo de Newton-
+ []
+
+
+Overfull \hbox (2.24005pt too wide) in paragraph at lines 107--109
+[]\OT1/cmr/bx/n/10 An^^Salisis e im-ple-mentaci^^Son de m^^Setodos it-er-a-tivos y de Krylov:
+ []
+
 <PrimerMalla.png, id=13, 867.24pt x 289.08pt>
 File: PrimerMalla.png Graphic file (type png)
 <use PrimerMalla.png>
-Package pdftex.def Info: PrimerMalla.png  used on input line 104.
+Package pdftex.def Info: PrimerMalla.png  used on input line 133.
 (pdftex.def)             Requested size: 345.0pt x 114.99918pt.
- [2 <./PrimerMalla.png>]
-Overfull \hbox (29.95634pt too wide) detected at line 146
-\OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10 = [][\OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 v[]\OT1/cmr/m/n/10 ] \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 v[]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 v[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 v[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 v[]\OT1/cmr/m/n/10 )
- []
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Overfull \hbox (19.14304pt too wide) detected at line 150
-\OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10 = [][\OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10 + 1] \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 v[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 v[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 v[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 v[]\OT1/cmr/m/n/10 )
- []
-
-
-Overfull \hbox (19.14304pt too wide) detected at line 154
-\OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10 = [][\OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10 + 1] \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 v[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 v[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 v[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 v[]\OT1/cmr/m/n/10 )
- []
-
-
-Overfull \hbox (5.49438pt too wide) in paragraph at lines 172--173
+[2] [3 <./PrimerMalla.png>]
+Overfull \hbox (5.49438pt too wide) in paragraph at lines 206--207
  [] \OT1/cmr/m/n/10 Para el se-gundo avance, el ob-je-tivo fue aplicar el m^^Setodo de \OT1/cmr/bx/n/10 Newton-Raphson
  []
 
-[3] [4]
-<Jacobiano.png, id=34, 867.24pt x 505.89pt>
+[4] [5]
+<Jacobiano.png, id=37, 867.24pt x 505.89pt>
 File: Jacobiano.png Graphic file (type png)
 <use Jacobiano.png>
-Package pdftex.def Info: Jacobiano.png  used on input line 245.
+Package pdftex.def Info: Jacobiano.png  used on input line 279.
 (pdftex.def)             Requested size: 345.0pt x 201.24855pt.
- [5]
-<GaussJordanSol.png, id=38, 867.24pt x 361.35pt>
+ [6]
+<GaussJordanSol.png, id=42, 867.24pt x 361.35pt>
 File: GaussJordanSol.png Graphic file (type png)
 <use GaussJordanSol.png>
-Package pdftex.def Info: GaussJordanSol.png  used on input line 257.
+Package pdftex.def Info: GaussJordanSol.png  used on input line 291.
 (pdftex.def)             Requested size: 413.99895pt x 172.50317pt.
 
-Overfull \hbox (68.99895pt too wide) in paragraph at lines 257--258
+Overfull \hbox (68.99895pt too wide) in paragraph at lines 291--292
  [][] 
  []
 
-[6 <./Jacobiano.png>] [7 <./GaussJordanSol.png>]
-<DiagDom.png, id=48, 1499.6025pt x 815.045pt>
+[7 <./Jacobiano.png>] [8 <./GaussJordanSol.png>]
+<DiagDom.png, id=51, 1499.6025pt x 815.045pt>
 File: DiagDom.png Graphic file (type png)
 <use DiagDom.png>
-Package pdftex.def Info: DiagDom.png  used on input line 299.
+Package pdftex.def Info: DiagDom.png  used on input line 333.
 (pdftex.def)             Requested size: 345.0pt x 187.50615pt.
- [8 <./DiagDom.png>]
-<isSymmetric.png, id=54, 1499.6025pt x 417.56pt>
+ [9 <./DiagDom.png>]
+<isSymmetric.png, id=57, 1499.6025pt x 417.56pt>
 File: isSymmetric.png Graphic file (type png)
 <use isSymmetric.png>
-Package pdftex.def Info: isSymmetric.png  used on input line 326.
+Package pdftex.def Info: isSymmetric.png  used on input line 360.
 (pdftex.def)             Requested size: 345.0pt x 96.06226pt.
 
-Overfull \hbox (0.97269pt too wide) in paragraph at lines 330--331
+Overfull \hbox (0.97269pt too wide) in paragraph at lines 364--365
 []\OT1/cmr/m/n/10 al eje-cu-tar esta funci^^Son so-bre nues-tra ma-triz $\OML/cmm/m/it/10 A$\OT1/cmr/m/n/10 , se ob-tiene que no es sim^^Setrica.
  []
 
-<Richardson.png, id=55, 867.24pt x 361.35pt>
+<Richardson.png, id=58, 867.24pt x 361.35pt>
 File: Richardson.png Graphic file (type png)
 <use Richardson.png>
-Package pdftex.def Info: Richardson.png  used on input line 339.
+Package pdftex.def Info: Richardson.png  used on input line 373.
 (pdftex.def)             Requested size: 413.99895pt x 172.50317pt.
 
-Overfull \hbox (68.99895pt too wide) in paragraph at lines 339--340
+Overfull \hbox (68.99895pt too wide) in paragraph at lines 373--374
  [][] 
  []
 
-<Jacobi.png, id=56, 867.24pt x 361.35pt>
+<Jacobi.png, id=59, 867.24pt x 361.35pt>
 File: Jacobi.png Graphic file (type png)
 <use Jacobi.png>
-Package pdftex.def Info: Jacobi.png  used on input line 345.
+Package pdftex.def Info: Jacobi.png  used on input line 379.
 (pdftex.def)             Requested size: 413.99895pt x 172.50317pt.
 
-Overfull \hbox (68.99895pt too wide) in paragraph at lines 345--346
+Overfull \hbox (68.99895pt too wide) in paragraph at lines 379--380
  [][] 
  []
 
-[9 <./isSymmetric.png> <./Richardson.png>]
-<GaussSeidel.png, id=62, 867.24pt x 361.35pt>
+[10 <./isSymmetric.png> <./Richardson.png>]
+<GaussSeidel.png, id=65, 867.24pt x 361.35pt>
 File: GaussSeidel.png Graphic file (type png)
 <use GaussSeidel.png>
-Package pdftex.def Info: GaussSeidel.png  used on input line 351.
+Package pdftex.def Info: GaussSeidel.png  used on input line 385.
 (pdftex.def)             Requested size: 413.99895pt x 172.50317pt.
 
-Overfull \hbox (68.99895pt too wide) in paragraph at lines 351--352
+Overfull \hbox (68.99895pt too wide) in paragraph at lines 385--386
  [][] 
  []
 
-(c:\Users\hp\Desktop\universidad\Doc Taller 1 SCN\build\main.bbl [10 <./Jacobi.png> <./GaussSeidel.png>]) [11]
-runsystem(latexminted cleantemp  --timestamp 20250512003925 FAD58DE7366495DB4650CFEFAC2FCD61)...disabled (restricted).
+(c:\Users\hp\Desktop\universidad\Doc Taller 1 SCN\build\main.bbl [11 <./Jacobi.png> <./GaussSeidel.png>]) [12]
+runsystem(latexminted cleantemp  --timestamp 20250512153319 FAD58DE7366495DB4650CFEFAC2FCD61)...disabled (restricted).
 
  (c:\Users\hp\Desktop\universidad\Doc Taller 1 SCN\build\main.aux)
  ***********
@@ -468,17 +465,17 @@ L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 11021 strings out of 474485
- 228140 string characters out of 5745149
- 1938542 words of memory out of 5000000
- 33178 multiletter control sequences out of 15000+600000
+ 11024 strings out of 474485
+ 228213 string characters out of 5745149
+ 1939542 words of memory out of 5000000
+ 33181 multiletter control sequences out of 15000+600000
  568335 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,9n,93p,746b,395s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 85i,9n,93p,745b,395s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\hp\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on "c:\Users\hp\Desktop\universidad\Doc Taller 1 SCN\build\main.pdf" (12 pages, 431737 bytes).
+Output written on "c:\Users\hp\Desktop\universidad\Doc Taller 1 SCN\build\main.pdf" (13 pages, 436770 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
+ 142 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

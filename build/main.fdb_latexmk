@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex build/main"] 1747027487.70136 "build/main.aux" "build/main.bbl" "build/main" 1747028368.52512 0
-  "./referencias.bib" 1747021981 365 8ba61b6885325a592311b116a2033997 ""
+["bibtex build/main"] 1747081979.23086 "build/main.aux" "build/main.bbl" "build/main" 1747082004.68408 0
+  "./referencias.bib" 1747030969 714 c96ae023b4c702595f74ab11e7bb0815 ""
   "C:/Users/hp/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "build/main.aux" 1747028367 2794 a03f2283a74aedb40f89f50d3dd14d4a "pdflatex"
+  "build/main.aux" 1747082002 2917 2809d09e008bc17006245fc9c5a7e846 "pdflatex"
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1747028365.12551 "c:/Users/hp/Desktop/universidad/Doc Taller 1 SCN/main.tex" "build/main.pdf" "main" 1747028368.52606 0
+["pdflatex"] 1747081998.43674 "c:/Users/hp/Desktop/universidad/Doc Taller 1 SCN/main.tex" "build/main.pdf" "main" 1747082004.68574 0
   "C:/Users/hp/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1747008315 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/hp/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1732496424 11548 a0d17b2dc1286c30a254e7b5c20dceca ""
   "C:/Users/hp/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1732339431 24223672 5b5a1274e00e8ae6eeb7b93bec824d4b ""
@@ -112,11 +112,11 @@
   "Jacobiano.png" 1747023196 26226 e2babdd3bdc7f5c3b3b2422eb83890a2 ""
   "PrimerMalla.png" 1747007995 7958 b5b86e321707939ff183ff9c7a2df190 ""
   "Richardson.png" 1747027061 21730 a27ca03c3943ac8fbdc588d4f2fb9cec ""
-  "build/main.aux" 1747028367 2794 a03f2283a74aedb40f89f50d3dd14d4a "pdflatex"
-  "build/main.bbl" 1747027488 341 077a27cd86f9de32e9b009ca59466d7d "bibtex build/main"
-  "c:/Users/hp/Desktop/universidad/Doc Taller 1 SCN/main.tex" 1747028364 16158 725e7e63e9b50a8031194b7deae99460 ""
+  "build/main.aux" 1747082002 2917 2809d09e008bc17006245fc9c5a7e846 "pdflatex"
+  "build/main.bbl" 1747081980 611 c768d5010b8f6601cb4421284ad1a9f4 "bibtex build/main"
+  "c:/Users/hp/Desktop/universidad/Doc Taller 1 SCN/main.tex" 1747081996 18762 b3784ca14cce39200a20b4c0ecb5160b ""
   "isSymmetric.png" 1747026017 61552 a8fb74c939da04b2d9bcfcd08ba2f25b ""
-  "main.tex" 1747028364 16158 725e7e63e9b50a8031194b7deae99460 ""
+  "main.tex" 1747081996 18762 b3784ca14cce39200a20b4c0ecb5160b ""
   (generated)
   "build/main.aux"
   "build/main.log"

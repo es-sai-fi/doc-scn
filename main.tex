@@ -74,7 +74,7 @@
 
   \section*{Abstract}
   \paragraph{}
-  Este trabajo presenta una simulación numérica de la vorticidad de un fluido incompresible mediante la discretización de las ecuaciones de Navier-Stokes. El problema se modeló sobre una malla rectangular, donde la velocidad en cada punto se calcula como un promedio de las velocidades en las celdas adyacentes, ajustado por un término no lineal. Para resolver el sistema no lineal asociado, se empleó el método de Newton-Raphson, mientras que para el cálculo del vector de corrección de Newton-Raphson se exploraron métodos iterativos como Richardson, Jacobi, Gauss-Seidel, y métodos de Krylov como Gradiente Conjugado y Gradiente Descendiente.
+  Este trabajo presenta una simulación numérica de la velocidad de un fluido incompresible usando la discretización de las ecuaciones de Navier-Stokes. El problema se modeló sobre una malla rectangular, donde la velocidad en cada punto se calcula como un promedio de las velocidades en las celdas adyacentes, ajustado por un término no lineal. Para resolver el sistema asociado al problema, se empleó el método de Newton-Raphson, mientras que para el cálculo del vector de corrección de Newton-Raphson se exploraron métodos iterativos como Richardson, Jacobi, Gauss-Seidel, y métodos de Krylov como Gradiente Conjugado y Gradiente Descendiente.
 
   \section*{Introducción}
   \paragraph{}
@@ -85,8 +85,37 @@
   
   \paragraph{}
   A lo largo del desarrollo del proyecto, se concluyó que el método de Gauss-Seidel presenta un mejor comportamiento para este problema en particular, logrando una convergencia más rápida con un menor número de iteraciones. Adicionalmente, se identificó que los métodos de Krylov no pueden aplicarse en este contexto, debido a que la matriz generada en el sistema lineal asociado al método de Newton-Raphson no es simétrica, siendo este un requisito para su implementación.
-  
-  \section*{Contenido}
+
+  \section*{Metodología}
+
+  El proceso de desarrollo del proyecto siguió un ciclo de pequeños avances conforme se desarrollaban los contenidos del curso. Este ciclo puede describirse de la siguiente manera:
+
+  \begin{enumerate}
+      \item \textbf{Adquisición de conocimiento teórico:} 
+      El proceso inició con la revisión de conceptos teóricos durante las clases. Entre estos conceptos se incluyen temas como diferencias finistas, Newton-Raphson para solución de sistemas no lineales, métodos iterativos y de Krylov para solución de sistemas lineales, entre otros.
+      
+      \item \textbf{Aplicación al proyecto:}  
+      Tras comprender los conceptos teóricos, se procedió a su aplicación en el proyecto:
+      
+      \begin{itemize}
+          \item \textbf{Discretización de las ecuaciones de Navier-Stokes:}  
+          Una vez entendido el método de diferencias finitas, se discretizaron las ecuaciones en el dominio del problema, eligiendo parámetros iniciales como el tamaño de malla y el step ($h$) adecuado para las simulaciones.  
+
+          \item \textbf{Implementación de Newton-Raphson:}  
+          Con el método de Newton-Raphson se calculó la solución aproximada del sistema de ecuaciones no lineales, permitiendo realizar la primera simulación del proyecto.  
+
+          \item \textbf{Análisis e implementación de métodos iterativos y de Krylov:}  
+          Al avanzar en los temas, se exploraron diferentes métodos iterativos (Richardson, Jacobi, Gauss-Seidel) y métodos de Krylov (Gradiente Descendiente y Gradiente Conjugado) para calcular el vector de corrección en el método de Newton-Raphson.
+      \end{itemize}
+      
+      \item \textbf{Implementaciones:}  
+      Cada avance fue implementado en Python. Las simulaciones realizadas fueron guardadas para su posterior presentación en clase.
+      
+      \item \textbf{Retroalimentación constante:}  
+      Para cada avance se realizó una breve presentación frente a la profesora, donde se expusieron los avances y se recibió retroalimentación. Esto permitió corregir errores y reafirmar conceptos antes de seguir con el siguiente ciclo. 
+  \end{enumerate}
+
+  \section*{Desarrollo del Proyecto}
 
   \subsection*{Primer Avance}
   \paragraph{}
@@ -111,10 +140,10 @@
   \
 
   Borde superior
-  \[V_x = 0, \, v_y = 0 \quad i = 0, \quad 0 \leq j <= 59\]
+  \[V_x = 0, \, v_y = 0 \quad i = 0, \quad 0 \leq j \leq 59\]
 
   Borde inferior
-  \[v_x = 0, \, v_y = 0 \quad i = 19, \quad 0 \leq j <= 59\]
+  \[v_x = 0, \, v_y = 0 \quad i = 19, \quad 0 \leq j \leq 59\]
 
   Borde izquierdo
   \[v_x = 1, \, v_y = 0 \quad j = 0, \quad 0 < i < 19\]
@@ -125,13 +154,14 @@
   \paragraph{}
   Por último, partiendo de la siguiente ecuación:
 
-  \[r=\frac{1}{4}[v_{(i+1,j)}^x+v_{(i-1,j)}^x+v_{(i,j+1)}^x+v_{(i,j-1)}^x]+N-v_{(i,j)}^x\]
+  \[r=\frac{1}{4}[v_{i+1,j}^x+v_{i-1,j}^x+v_{i,j+1}^x+v_{i,j-1}^x]+N-v_{i,j}^x\]
   
-  consideraremos que este residuo $r$ es $0$ obteniendo entonces:
-  \[v_{(i,j)}^x=\frac{1}{4}[v_{(i+1,j)}^x+v_{(i-1,j)}^x+v_{(i,j+1)}^x+v_{(i,j-1)}^x]+N\]
-  \[N=-\frac{h}{8}v_{(i,j)}^x(v_{(i+1,j)}^x-v_{(i-1,j)}^x)-\frac{h}{8}v_{(i,j)}^y(v_{(i,j+1)}^y-v_{(i,j-1)}^y)\]
+  consideraremos que este residuo $r$ es $0$ obteniendo:
+  \[v_{i,j}^x=\frac{1}{4}[v_{i+1,j}^x+v_{i-1,j}^x+v_{i,j+1}^x+v_{i,j-1}^x]+N\]
+  \[N=-\frac{h}{8}v_{i,j}^x(v_{i+1,j}^x-v_{i-1,j}^x)-\frac{h}{8}v_{i,j}^y(v_{i,j+1}^y-v_{i,j-1}^y)\]
 
-  consideraremos entonces que la velocidad en una celda cualquiera será dada por un promedio de las velocidades de las celdas adyacentes más un factor no lineal.
+  \paragraph{}
+  la velocidad en una celda cualquiera será dada por un promedio de las velocidades de las celdas adyacentes más un factor no lineal.
 
   \paragraph{}
   Teniendo en cuenta las condiciones de frontera mencionadas, los parámetros iniciales definidos y la ecuación para la velocidad de cada celda, la malla estará conformada por bordes con valores constantes y celdas internas que, dependiendo de su posición en la malla interior (centro, borde o esquina), tendrán una ecuación diferente:
@@ -139,32 +169,36 @@
   \
 
   Borde superior interno
-  \[v_{(1,j)}^x=\frac{1}{4}[v_{(2,j)}^x+v_{(1,j+1)}^x+v_{(1,j-1)}^x]-\frac{1}{8}v_{(1,j)}^x \cdot v_{(2,j)}^x-\frac{1}{8}v_{(1,j)}^y(v_{(1,j+1)}^y-v_{(1,j-1)}^y)\]
+  \[v^{x}_{1,j} = \frac{1}{4}[v^x_{2,j} + v^x_{1,j+1} + v^x_{1,j-1} - \frac{h}{2}v^{x}_{1,j}(v^x_{2,j})- \frac{h}{2}v^{y}_{1,j}(v^y_{1,j+1}-v^y_{1,j-1})]\]
   \[1<j<58\]
 
   Borde inferior interno
-  \[v_{(18,j)}^x=\frac{1}{4}[v_{(17,j)}^x+v_{(18,j+1)}^x+v_{(18,j-1)}^x]-\frac{1}{8}v_{(18,j)}^x(-v_{(17,j)}^x)-\frac{1}{8}v_{(18,j)}^y(v_{(18,j+1)}^y-v_{(18,j-1)}^y)\]
+  \[v^{x}_{18,j} = \frac{1}{4}[v^x_{17,j} + v^x_{18,j+1} + v^x_{18,j-1} - \frac{h}{2}v^{x}_{18,j}(-v^{x}_{17,j})- \frac{h}{2}v^{y}_{18,j}(v^y_{18,j+1}-v^y_{18,j-1})]\]
   \[1<j<58\]
 
   Borde izquierdo interno
-  \[v_{(i,1)}^x=\frac{1}{4}[v_{(i+1,1)}^x+v_{(i-1,1)}^x+v_{(i,2)}^x+1]-\frac{1}{8}v_{(i,1)}^x(v_{(i+1,j)}^x-v_{(i-1,j)}^x)-\frac{1}{8}v_{(i,1)}^y(v_{(i,2)}^y-v_{(i,0)}^y)\]
+  \[v_{i,1}^x=\frac{1}{4}[v_{i+1,1}^x+v_{i-1,1}^x+v_{i,2}^x+1 - \frac{h}{2}v^{x}_{i,j}(v^{x}_{i+1,j}-v^{x}_{i-1,j})- \frac{h}{2}v^{y}_{i,j}(v^y_{i,j+1}-1)]\]
   \[1<i<18\]
 
   Borde derecho interno
-  \[v_{(i,1)}^x=\frac{1}{4}[v_{(i+1,1)}^x+v_{(i-1,1)}^x+v_{(i,2)}^x+1]-\frac{1}{8}v_{(i,1)}^x(v_{(i+1,j)}^x-v_{(i-1,j)}^x)-\frac{1}{8}v_{(i,1)}^y(v_{(i,2)}^y-v_{(i,0)}^y)\]
+  \[v_{i,58}^x=\frac{1}{4}[v_{i+1,58}^x+v_{i-1,58}^x+v_{i,57}-\frac{1}{2}v_{i,58}^x(v_{i+1,j}^x-v_{i-1,j}^x)-\frac{1}{2}v_{i,58}^y(-v_{i,57}^y)]\]
   \[1<i<18\]
 
   Esquina superior izquierda
+  \[v_{1,1}^x=\frac{1}{4}[v_{2,1}^x+v_{1,2}^x+1-\frac{1}{2}v_{1,1}^x(v_{2,1}^x)-\frac{1}{2}v_{1,1}^y(v_{1,2}^y-1)]\]
 
   Esquina superior derecha
+  \[v_{1,58}^x=\frac{1}{4}[v_{2,1}^x+v_{1,57}^x-\frac{1}{2}v_{1,58}^x(v_{2,1}^x)-\frac{1}{2}v_{1,58}^y(-v_{1,57}^y)]\]
 
   Esquina inferior izquierda
+  \[v_{18,1}^x=\frac{1}{4}[v_{17,1}^x+v_{18,2}^x+1-\frac{1}{2}v_{18,1}^x(-v_{17,1}^x)-\frac{1}{2}v_{18,1}^y(v_{18,2}^y-1)]\]
 
   Esquina inferior derecha
+  \[v_{18,58}^x=\frac{1}{4}[v_{17,58}^x+v_{18,57}^x-\frac{1}{2}v_{18,58}^x(-v_{17,58}^x)-\frac{1}{2}v_{18,58}^y(-v_{18,57}^y)]\]
 
   Centro
-  \[v_{(i,j)}^x=\frac{1}{4}[v_{(i+1,j)}^x+v_{(i-1,j)}^x+v_{(i,j+1)}^x+v_{(i,j-1)}^x]+N\]
-  \[N=-\frac{h}{8}v_{(i,j)}^x(v_{(i+1,j)}^x-v_{(i-1,j)}^x)-\frac{h}{8}v_{(i,j)}^y(v_{(i,j+1)}^y-v_{(i,j-1)}^y)\]
+  \[v_{i,j}^x=\frac{1}{4}[v_{i+1,j}^x+v_{i-1,j}^x+v_{i,j+1}^x+v_{i,j-1}^x]+N\]
+  \[N=-\frac{h}{8}v_{i,j}^x(v_{i+1,j}^x-v_{i-1,j}^x)-\frac{h}{8}v_{i,j}^y(v_{i,j+1}^y-v_{i,j-1}^y)\]
   \[2<i<18, \ 2<j<58\]
 
   \subsection*{Segundo Avance}
@@ -172,19 +206,19 @@
   Para el segundo avance, el objetivo fue aplicar el método de \textbf{Newton-Raphson} para solucionar el sistema de ecuaciones asociado al problema. Dicho sistema está conformado por ecuaciones de la forma:
 
   \[
-  F_{i,j} = v_{(i,j)}^x - \frac{1}{4} \left[v_{(i+1,j)}^x + v_{(i-1,j)}^x + v_{(i,j+1)}^x + v_{(i,j-1)}^x \right] - N
+  F_{i,j} = v_{(i,j)}^x - \frac{1}{4} \left[v_{(i+1,j)}^x + v_{(i-1,j)}^x + v_{(i,j+1)}^x + v_{(i,j-1)}^x \right] + N
   \]
 
   donde \(N\) representa el término no lineal que depende de las diferencias de velocidades adyacentes y se define como:
 
   \[
-  N = -\frac{h}{8}v_{(i,j)}^x \left(v_{(i+1,j)}^x - v_{(i-1,j)}^x \right) - \frac{h}{8}v_{(i,j)}^y \left(v_{(i,j+1)}^y - v_{(i,j-1)}^y \right)
+  N = \frac{h}{8}v_{(i,j)}^x \left(v_{(i+1,j)}^x - v_{(i-1,j)}^x \right) + \frac{h}{8}v_{(i,j)}^y \left(v_{(i,j+1)}^y - v_{(i,j-1)}^y \right)
   \]
 
-  El sistema de ecuaciones generado tiene un total de \((N_x - 2) \cdot (N_y - 2)\) ecuaciones, es decir, \(1044\) ecuaciones en nuestro caso, considerando las condiciones de frontera.
+  el sistema de ecuaciones generado tiene un total de \((N_x - 2) \cdot (N_y - 2)\) ecuaciones, es decir, \(1044\) ecuaciones en nuestro caso, considerando las condiciones de frontera.
 
   \paragraph{}
-  El método de \textbf{Newton-Raphson} para sistemas de ecuaciones de varias variables se expresa mediante la siguiente ecuación iterativa:
+  El método de \textbf{Newton-Raphson} para sistemas de ecuaciones de varias variables se expresa mediante la siguiente ecuación iterativa \cite{kincaid1}:
 
   \[
   \vec{x}^{(k+1)} = \vec{x}^{(k)} + H
@@ -205,7 +239,7 @@
 
   donde:
   \begin{itemize}
-    \item \(J(\vec{x})\) es la matriz jacobiana del sistema, que contiene las derivadas parciales de cada ecuación \(F_{i,j}\) respecto a cada incógnita:
+    \item \(J(\vec{x})\) es la matriz jacobiana del sistema evaluada en el punto actual. Esta se forma a partir de las derivadas parciales de cada ecuación \(F_{i,j}\) respecto a cada incógnita:
       
     \[
     J(\vec{x}) = 
@@ -227,13 +261,13 @@
   Los cinco tipos de derivadas parciales no nulas corresponden a las contribuciones de las celdas adyacentes en las siguientes direcciones:
   \begin{itemize}
       \item Derivada con respecto a \(v_{(i+1, j)}^x\) — Celda inferior.
-      \[-\frac{1}{4}+\frac{h}{2}v_{(i,j)}^x\]
+      \[-\frac{1}{4}+\frac{h}{8}v_{(i,j)}^x\]
       \item Derivada con respecto a \(v_{(i-1, j)}^x\) — Celda superior.
-      \[-\frac{1}{4}-\frac{h}{2}v_{(i,j)}^x\]
+      \[-\frac{1}{4}-\frac{h}{8}v_{(i,j)}^x\]
       \item Derivada con respecto a \(v_{(i, j+1)}^x\) — Celda a la izquierda.
-      \[-\frac{1}{4}-\frac{h}{2}v_{(i,j)}^y\]
+      \[-\frac{1}{4}-\frac{h}{8}v_{(i,j)}^y\]
       \item Derivada con respecto a \(v_{(i, j-1)}^x\) — Celda a la derecha.
-      \[-\frac{1}{4}+\frac{h}{2}v_{(i,j)}^y\]
+      \[-\frac{1}{4}+\frac{h}{8}v_{(i,j)}^y\]
       \item Derivada con respecto a \(v_{(i, j)}^x\) — Celda actual (término diagonal).
       \[1+\frac{h}{8}(v_{(i+1,j)}^x-v_{(i-1,j)}^x)\]
   \end{itemize}
@@ -282,8 +316,8 @@
 
   estos métodos convergen bajo los siguientes supuestos:
   \begin{itemize}
-    \item Según \cite{kincaid}, para los métodos de Gauss-Seidel y Jacobi, basta con que la matriz $A$ sea diagonal dominante.
-    \item Según \cite{kincaid}, para el método de Richardson, es necesario comprobar que $\|I-Q^{-1}A\| \leq 1$ para alguna norma dada.
+    \item Para los métodos de Gauss-Seidel y Jacobi, basta con que la matriz $A$ sea diagonal dominante \cite{kincaid2}.
+    \item Para el método de Richardson, es necesario comprobar que $\|I-Q^{-1}A\| \leq 1$ para alguna norma dada \cite{kincaid2}.
   \end{itemize}
 
   recordemos que una matriz es diagonal dominante si:
@@ -351,8 +385,6 @@
       \includegraphics[width=1.2\textwidth]{GaussSeidel.png}
       \caption{Solución mediante Gauss Seidel}
   \end{figure}
-
-  \section*{Metodología}
 
   \section*{Conclusiones}
 

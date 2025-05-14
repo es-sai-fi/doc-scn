@@ -297,10 +297,18 @@
   En el tercer avance se tiene como objetivo la implementación de los métodos iterativos \textbf{Richardson}, \textbf{Jacobi} y \textbf{Gauss-Seidel}, y los métodos de Krylov \textbf{Grad. Descendiente} y \textbf{Grad. Conjugado}, para el cálculo del vector de correción $H$.
 
   \paragraph{}
-  Antes de pasar al desarrollo de los objetivos de este avance es importante aclarar que hasta el momento las matrices $V_x$ y $V_y$ eran inicializacadas ambas con un valor constante igual para cada celda. Ahora, la forma en la que se inicializan es partiendo de unos valores iniciales $V_x^{0}$ y $V_y^{0}$ y un escalar $v$ dado, se dividen ambas matrices en $p$ particiones y se le asigna a cada perteneciente a una partición un valor dado por la fórmula:
+  Antes de pasar al desarrollo de los objetivos de este avance es importante aclarar que hasta el momento las matrices $V_x$ y $V_y$ eran inicializacadas ambas con un valor constante igual para cada celda. Ahora, la forma en la que se inicializan es partiendo de unos valores iniciales $v_x^{0}$ y $v_y^{0}$ y un escalar $u$ dado, se dividen ambas matrices en $p$ particiones y se le asigna a cada perteneciente a una partición un valor dado por la fórmula:
 
-  \[V_x^{(p)}=V_x^{(0)}\cdot v^{p+1}\]
-  \[V_y^{(p)}=V_y^{(0)}\cdot v^{p+1}\]
+  \[v_x^{(p)}=v_x^{(0)}\cdot u^{p+1}\]
+  \[v_y^{(p)}=v_y^{(0)}\cdot u^{p+1}\]
+
+  ejemplo para una matriz $5\times10$ con $v^0=1$ y $v=\frac{1}{8}$:
+  
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{initVxVyExample.png}
+    \caption{Ejemplo de Inicialización}
+  \end{figure}
 
   \paragraph{}
   En métodos iterativos como \textbf{Richardson}, \textbf{Jacobi} y \textbf{Gauss-Seidel} tenemos que la ecuación de iteración es:
@@ -326,7 +334,8 @@
     \item Para el método de Richardson, es necesario comprobar que $\|I-Q^{-1}A\| \leq 1$ para alguna norma dada \cite{kincaid2}.
   \end{itemize}
 
-  recordemos que una matriz es diagonal dominante si:
+  \paragraph{}
+  Recordemos que una matriz es diagonal dominante si:
 
   \[
   |a_{ii}| \geq \sum_{j \neq i}^{} |a_{ij}|

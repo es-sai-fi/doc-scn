@@ -158,7 +158,7 @@
   
   consideraremos que este residuo $r$ es $0$ obteniendo:
   \[v_{i,j}^x=\frac{1}{4}[v_{i+1,j}^x+v_{i-1,j}^x+v_{i,j+1}^x+v_{i,j-1}^x]+N\]
-  \[N=-\frac{h}{8}v_{i,j}^x(v_{i+1,j}^x-v_{i-1,j}^x)-\frac{h}{8}v_{i,j}^y(v_{i,j+1}^y-v_{i,j-1}^y)\]
+  \[N=-\frac{h}{8}v_{i,j}^x(v_{i+1,j}^x-v_{i-1,j}^x)-\frac{h}{8}v_{i,j}^y(v_{i,j+1}^x-v_{i,j-1}^x)\]
 
   \paragraph{}
   la velocidad en una celda cualquiera será dada por un promedio de las velocidades de las celdas adyacentes más un factor no lineal.
@@ -169,36 +169,36 @@
   \
 
   Borde superior interno
-  \[v^{x}_{1,j} = \frac{1}{4}[v^x_{2,j} + v^x_{1,j+1} + v^x_{1,j-1} - \frac{h}{2}v^{x}_{1,j}(v^x_{2,j})- \frac{h}{2}v^{y}_{1,j}(v^y_{1,j+1}-v^y_{1,j-1})]\]
+  \[v^{x}_{1,j} = \frac{1}{4}[v^x_{2,j} + v^x_{1,j+1} + v^x_{1,j-1} - \frac{h}{2}v^{x}_{1,j}(v^x_{2,j})- \frac{h}{2}v^{y}_{1,j}(v^x_{1,j+1}-v^x_{1,j-1})]\]
   \[1<j<58\]
 
   Borde inferior interno
-  \[v^{x}_{18,j} = \frac{1}{4}[v^x_{17,j} + v^x_{18,j+1} + v^x_{18,j-1} - \frac{h}{2}v^{x}_{18,j}(-v^{x}_{17,j})- \frac{h}{2}v^{y}_{18,j}(v^y_{18,j+1}-v^y_{18,j-1})]\]
+  \[v^{x}_{18,j} = \frac{1}{4}[v^x_{17,j} + v^x_{18,j+1} + v^x_{18,j-1} - \frac{h}{2}v^{x}_{18,j}(-v^{x}_{17,j})- \frac{h}{2}v^{y}_{18,j}(v^x_{18,j+1}-v^x_{18,j-1})]\]
   \[1<j<58\]
 
   Borde izquierdo interno
-  \[v_{i,1}^x=\frac{1}{4}[v_{i+1,1}^x+v_{i-1,1}^x+v_{i,2}^x+1 - \frac{h}{2}v^{x}_{i,j}(v^{x}_{i+1,j}-v^{x}_{i-1,j})- \frac{h}{2}v^{y}_{i,j}(v^y_{i,j+1}-1)]\]
+  \[v_{i,1}^x=\frac{1}{4}[v_{i+1,1}^x+v_{i-1,1}^x+v_{i,2}^x+1 - \frac{h}{2}v^{x}_{i,j}(v^{x}_{i+1,j}-v^{x}_{i-1,j})- \frac{h}{2}v^{y}_{i,j}(v^x_{i,j+1}-1)]\]
   \[1<i<18\]
 
   Borde derecho interno
-  \[v_{i,58}^x=\frac{1}{4}[v_{i+1,58}^x+v_{i-1,58}^x+v_{i,57}-\frac{1}{2}v_{i,58}^x(v_{i+1,j}^x-v_{i-1,j}^x)-\frac{1}{2}v_{i,58}^y(-v_{i,57}^y)]\]
+  \[v_{i,58}^x=\frac{1}{4}[v_{i+1,58}^x+v_{i-1,58}^x+v_{i,57}-\frac{1}{2}v_{i,58}^x(v_{i+1,j}^x-v_{i-1,j}^x)-\frac{1}{2}v_{i,58}^y(-v_{i,57}^x)]\]
   \[1<i<18\]
 
   Esquina superior izquierda
-  \[v_{1,1}^x=\frac{1}{4}[v_{2,1}^x+v_{1,2}^x+1-\frac{1}{2}v_{1,1}^x(v_{2,1}^x)-\frac{1}{2}v_{1,1}^y(v_{1,2}^y-1)]\]
+  \[v_{1,1}^x=\frac{1}{4}[v_{2,1}^x+v_{1,2}^x+1-\frac{1}{2}v_{1,1}^x(v_{2,1}^x)-\frac{1}{2}v_{1,1}^y(v_{1,2}^x-1)]\]
 
   Esquina superior derecha
-  \[v_{1,58}^x=\frac{1}{4}[v_{2,1}^x+v_{1,57}^x-\frac{1}{2}v_{1,58}^x(v_{2,1}^x)-\frac{1}{2}v_{1,58}^y(-v_{1,57}^y)]\]
+  \[v_{1,58}^x=\frac{1}{4}[v_{2,1}^x+v_{1,57}^x-\frac{1}{2}v_{1,58}^x(v_{2,1}^x)-\frac{1}{2}v_{1,58}^y(-v_{1,57}^x)]\]
 
   Esquina inferior izquierda
-  \[v_{18,1}^x=\frac{1}{4}[v_{17,1}^x+v_{18,2}^x+1-\frac{1}{2}v_{18,1}^x(-v_{17,1}^x)-\frac{1}{2}v_{18,1}^y(v_{18,2}^y-1)]\]
+  \[v_{18,1}^x=\frac{1}{4}[v_{17,1}^x+v_{18,2}^x+1-\frac{1}{2}v_{18,1}^x(-v_{17,1}^x)-\frac{1}{2}v_{18,1}^y(v_{18,2}^x-1)]\]
 
   Esquina inferior derecha
-  \[v_{18,58}^x=\frac{1}{4}[v_{17,58}^x+v_{18,57}^x-\frac{1}{2}v_{18,58}^x(-v_{17,58}^x)-\frac{1}{2}v_{18,58}^y(-v_{18,57}^y)]\]
+  \[v_{18,58}^x=\frac{1}{4}[v_{17,58}^x+v_{18,57}^x-\frac{1}{2}v_{18,58}^x(-v_{17,58}^x)-\frac{1}{2}v_{18,58}^y(-v_{18,57}^x)]\]
 
   Centro
   \[v_{i,j}^x=\frac{1}{4}[v_{i+1,j}^x+v_{i-1,j}^x+v_{i,j+1}^x+v_{i,j-1}^x]+N\]
-  \[N=-\frac{h}{8}v_{i,j}^x(v_{i+1,j}^x-v_{i-1,j}^x)-\frac{h}{8}v_{i,j}^y(v_{i,j+1}^y-v_{i,j-1}^y)\]
+  \[N=-\frac{h}{8}v_{i,j}^x(v_{i+1,j}^x-v_{i-1,j}^x)-\frac{h}{8}v_{i,j}^y(v_{i,j+1}^x-v_{i,j-1}^x)\]
   \[2<i<18, \ 2<j<58\]
 
   \subsection*{Segundo Avance}
@@ -212,7 +212,7 @@
   donde \(N\) representa el término no lineal que depende de las diferencias de velocidades adyacentes y se define como:
 
   \[
-  N = \frac{h}{8}v_{(i,j)}^x \left(v_{(i+1,j)}^x - v_{(i-1,j)}^x \right) + \frac{h}{8}v_{(i,j)}^y \left(v_{(i,j+1)}^y - v_{(i,j-1)}^y \right)
+  N = \frac{h}{8}v_{(i,j)}^x \left(v_{(i+1,j)}^x - v_{(i-1,j)}^x \right) + \frac{h}{8}v_{(i,j)}^y \left(v_{(i,j+1)}^x - v_{(i,j-1)}^x \right)
   \]
 
   el sistema de ecuaciones generado tiene un total de \((N_x - 2) \cdot (N_y - 2)\) ecuaciones, es decir, \(1044\) ecuaciones en nuestro caso, considerando las condiciones de frontera.
@@ -264,9 +264,9 @@
       \[-\frac{1}{4}+\frac{h}{8}v_{(i,j)}^x\]
       \item Derivada con respecto a \(v_{(i-1, j)}^x\) — Celda superior.
       \[-\frac{1}{4}-\frac{h}{8}v_{(i,j)}^x\]
-      \item Derivada con respecto a \(v_{(i, j+1)}^x\) — Celda a la izquierda.
+      \item Derivada con respecto a \(v_{(i, j+1)}^y\) — Celda a la izquierda.
       \[-\frac{1}{4}-\frac{h}{8}v_{(i,j)}^y\]
-      \item Derivada con respecto a \(v_{(i, j-1)}^x\) — Celda a la derecha.
+      \item Derivada con respecto a \(v_{(i, j-1)}^y\) — Celda a la derecha.
       \[-\frac{1}{4}+\frac{h}{8}v_{(i,j)}^y\]
       \item Derivada con respecto a \(v_{(i, j)}^x\) — Celda actual (término diagonal).
       \[1+\frac{h}{8}(v_{(i+1,j)}^x-v_{(i-1,j)}^x)\]
@@ -297,7 +297,13 @@
   En el tercer avance se tiene como objetivo la implementación de los métodos iterativos \textbf{Richardson}, \textbf{Jacobi} y \textbf{Gauss-Seidel}, y los métodos de Krylov \textbf{Grad. Descendiente} y \textbf{Grad. Conjugado}, para el cálculo del vector de correción $H$.
 
   \paragraph{}
-  Para los métodos iterativos mencionados, la ecuación de iteración es:
+  Antes de pasar al desarrollo de los objetivos de este avance es importante aclarar que hasta el momento las matrices $V_x$ y $V_y$ eran inicializacadas ambas con un valor constante igual para cada celda. Ahora, la forma en la que se inicializan es partiendo de unos valores iniciales $V_x^{0}$ y $V_y^{0}$ y un escalar $v$ dado, se dividen ambas matrices en $p$ particiones y se le asigna a cada perteneciente a una partición un valor dado por la fórmula:
+
+  \[V_x^{(p)}=V_x^{(0)}\cdot v^{p+1}\]
+  \[V_y^{(p)}=V_y^{(0)}\cdot v^{p+1}\]
+
+  \paragraph{}
+  En métodos iterativos como \textbf{Richardson}, \textbf{Jacobi} y \textbf{Gauss-Seidel} tenemos que la ecuación de iteración es:
 
   \[
   \vec{x}^{(k)}=(I-Q^{-1}A)\vec{x}^{(k-1)}+Q^{-1}b
@@ -366,7 +372,7 @@
   \paragraph{}
   Una vez cubiertos los métodos y sus supuestos, procederemos a compararlos bajo el número de iteraciones que necesitaron para alcanzar una tolerancia de $1\times10^{-6}$. A continuación los parámetros y soluciones:
 
-  \[N_x=60, \ N_y=20, \ h=0.001\]
+  \[N_x=60, \ N_y=20, \ V_x^0=1, \ V_y^0=0.001, \ h=0.001\]
 
   \begin{figure}[H]
       \centering
